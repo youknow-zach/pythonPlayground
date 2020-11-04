@@ -1,2 +1,0 @@
-#Testing
-print("Hello Zach!")
