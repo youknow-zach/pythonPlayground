@@ -2,7 +2,7 @@ print('This begins the program output**\n\nSect0\n')
 
 # you can open a file in a sub-folder from current directory like this
 info = []
-with open("testDir/birthday.csv", "r") as file:
+with open("../testDir/birthday.csv", "r") as file:
     for line in file:
         print(line.strip())
         info
@@ -15,7 +15,7 @@ names = [('Tom', 36, 'Baseball'),
         ('Jerry', 32, 'Football'),
         ('Harold', 40, 'Basketball')]
 
-file = open('testDir/writeMe.csv', 'w')
+file = open('../testDir/writeMe.csv', 'w')
 
 print('writing file **')
 header = 'name,age,favorite sport\n'

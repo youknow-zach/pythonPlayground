@@ -1,0 +1,23 @@
+Python class 2 has been on Functions, Files, and Dictionaries.
+Total topics covered include:
+
+-Files and CSV reading
+-Dictionaries and accumulation
+-Functions and tuples (including implied packing and unpacking)
+-Anonymous sorting with lambdas
+-Keyword parameters
+-Iteration and advanced Functions
+-While loops
+-Sorting
+-Passing functions and lambdas as sorting keys
+
+I will be creating a program to test all of these topics. The program should:
+#Import a CSV
+      -It will prompt the user for a program name, but link to one by default
+#parse the csv
+#display the cleaned data to the user
+#prompt the user for displaying certain sorting of the data, such as:
+      -The names of users in alpha order
+      -The names of users sorted by a particular attribute
+#The program will be able to save the sorted data to a CSV file that the user
+  can successfully import to and view in Google Sheets
