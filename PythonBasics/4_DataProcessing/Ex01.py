@@ -9,3 +9,35 @@ highest long-term interest rate. Both should be computed only for the period fro
 '''
 
 # Start here
+fhandle = open('SP500.txt', 'r')
+data = fhandle.readlines()
+info = []
+headers = []
+
+
+for line in range(len(data)):
+    if line == 0:
+        headers.append(data[line].strip().split(','))
+        continue
+    info.append(data[line].strip().split(','))
+    info[line-1][0] = info[line-1][0].split('/')
+
+max_interest_list = [float(amt[5]) for amt in info if
+                            (amt[0][2] == '2016' and int(amt[0][0]) >= 6) or
+                            (amt[0][2] == '2017' and int(amt[0][0]) <= 5)]
+mean_SP_list = [float(amt[1]) for amt in info if
+                            (amt[0][2] == '2016' and int(amt[0][0]) >= 6) or
+                            (amt[0][2] == '2017' and int(amt[0][0]) <= 5)]
+
+print(headers)
+
+max_interest = 0
+for amt in max_interest_list:
+    if max_interest < amt: max_interest = amt
+
+print(max_interest_list)
+print(mean_SP_list)
+print('{} / {} = {}'.format(sum(mean_SP_list), len(mean_SP_list), sum(mean_SP_list)/len(mean_SP_list)))
+mean_SP = sum(mean_SP_list)/len(mean_SP_list)
+
+print('\n\n{}\n{}'.format(max_interest, mean_SP))
